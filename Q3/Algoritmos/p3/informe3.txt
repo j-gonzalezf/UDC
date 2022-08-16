@@ -1,0 +1,95 @@
+Algoritmos
+Practica 2 
+Adriano Miranda Seoane -adriano.miranda
+Jorge Gónzalez Fernández -j.gonzalezf 
+Grupo: 1.2
+
+-----------
+INFORME
+-----------
+
+Se nos propuso un algoritmo para insertar nodos en un arbol binario de busqueda y otro para buscar una posición de un nodo en el árbol. Probamos que las funciones funcionan correctamente utilizando otras auxiliares necesarias para la inserción y búsqueda, tras eso, analizamos los tiempos de ejecución de estos algoritmos en la  siguiente máquina:
+
+
+[+]Características de la máquina:
+    [-]Procesador Intel Core i5-7200U CPU @ 2.50 GHz x 4
+    [-]Memoria RAM 8GB DDR4 
+    [-]Disco duro 1TB 5400rpm
+    [-]Tarjeta Gráfica Intel HD Graphics 620
+    [-]Sistema operativo: Ubuntu 18.04.3 LTS
+
+[+]Unidades de tiempo:
+    [-]La unidad de tiempo empleada es el Microsegundo
+    [-]Umbral de confianza: 500*10^-6 s [microsegundos]
+
+[+]Valor anómalo:
+	[-]Los valores anómalos se indicarán a la derecha del resultado con el siguiente símbolo: (&)
+
+
+[+]Tiempos de ejecución:
+
+[-]Tiempos de fib 1:
+
+ 
+          -------------------------------------------------------------------------
+	    n	    t(n)	   t(n)/1.1^n	  t(n)/fi^n   t(n)/1,1^n
+(*)         2       0.032000       0.026446       0.012223    0.008000000
+(*)         4       0.117000       0.079913       0.017070    0.007312500
+(*)         8       0.815000       0.380204       0.017348    0.003183594
+(*)        16       9.687000       2.108173       0.013469    0.000147812
+           32   16622.000000     787.258490       0.003413(&) 0.000003870
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+[+]Buscar e Insertar con inicializacion aleatoria
+	n	t_buscar	t_ins
+      8000    1312.000000    1484.000000    
+     16000    3242.000000    3863.000000    
+     32000    9295.000000    9273.000000    
+     64000   19440.000000   22162.000000    
+    128000   48250.000000   54528.000000    
+    256000  125635.000000  161883.000000  
+
+[+]Insertar con inicializacion aleatoria:
+	n	t(n)		t(n)/n^1	t(n)/n^1.25	t(n)/n^1.6
+      8000    1778.000000       0.272250       0.029787      0.0012391    
+     16000    4672.000000       0.385750       0.031299      0.0011583    
+     32000   10871.000000       0.402219       0.030073      0.0007968    
+     64000   24390.000000       0.443594       0.029889      0.0005798    
+    128000   59298.000000       0.541391       0.028623      0.0004669    
+    256000  160267.000000       0.626043       0.027832      0.0003562   
+	
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:    (n^1.0)         Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:       O(n)            Tiempo →  cte: 0.029
+Cota Sobrestimada:   (n^1.6)      Tiempo → 0 (decrece) cuando n → ∞
+
+[+]Buscar con inicializacion aleatoria:
+	n	t(n)		t(n)/n^1.0	t(n)/n^1.25	t(n)/n^0.8
+      8000    1891.000000       0.236375       0.024994      0.0001783    
+     16000    5114.000000       0.319625       0.028419      0.0001385    
+     32000   11237.000000       0.351156       0.026255      0.0000874    
+     64000   27428.000000       0.428563       0.026944      0.0000612    
+    128000   64582.000000       0.504547       0.026675      0.0000414    
+    256000  157428.000000       0.614953       0.027339      0.0000290  
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:    (n^1.0)	    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:       O(n^1.25)      Tiempo →  cte: 0.027
+Cota Sobrestimada:   (n^0.8)        Tiempo → 0 (decrece) cuando n → ∞
+
+[+]Conclusiones:
+
+1. Tiempos de insertar superiores a tiempos de buscar, por lo tanto, insertar es una operación más costosa.
+
+2. Como estamos realizando muchas busquedas y muchas inserciones los tiempos varían mucho. Ejemplo: ejecutando dos veces se puede comprobar una diferecia significativa de tiempos entre los tiempos de la primera ejecución y los de la segunda, lo que dificulta el calculo de las cotas.
+
+3.No detectamos valores anómalos. 
+
+ 
