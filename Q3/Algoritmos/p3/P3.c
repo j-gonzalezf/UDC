@@ -1,3 +1,10 @@
+/*
+ * Algoritmos
+ * Grupo: 1.2
+ * Práctica 3
+ * Adriano Miranda Seoane - adriano.miranda
+ * Jorge González Fernández - j.gonzalezf
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
