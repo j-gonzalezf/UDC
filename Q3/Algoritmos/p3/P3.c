@@ -5,6 +5,7 @@
  * Adriano Miranda Seoane - adriano.miranda
  * Jorge González Fernández - j.gonzalezf
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
