@@ -1,0 +1,94 @@
+Algoritmos
+Practica 1 
+Adriano Miranda Seoane -adriano.miranda
+Jorge Gónzalez Fernández -j.gonzalezf 
+Grupo: 1.2
+
+-----------
+INFORME
+-----------
+
+Se nos propuso tres algoritmos para determinar la sucesión de Fibonacci para un determinado número. Los probamos con tres números para verificar que funcionan correctamente, tras eso, analizamos los tiempos de ejecución del algoritmo en la  siguiente máquina:
+
+
+[+]Características de la máquina:
+    [-]Procesador Intel Core i5-7200U CPU @ 2.50 GHz x 4
+    [-]Memoria RAM 8GB DDR4 
+    [-]Disco duro 1TB 5400rpm
+    [-]Tarjeta Gráfica Intel HD Graphics 620
+    [-]Sistema operativo: Ubuntu 18.04.3 LTS
+
+[+]Unidades de tiempo:
+    [-]La unidad de tiempo empleada es el Microsegundo
+    [-]Umbral de confianza: 500*10^-6 s [microsegundos]
+
+[+]Valor anómalo:
+	[-]Los valores anómalos se indicarán a la derecha del resultado con el siguiente símbolo: (&)
+
+
+[+]Tiempos de ejecución:
+
+[-]Tiempos de fib 1:
+
+Tiempos fib 1: 
+          -------------------------------------------------------------------------
+	    n	    t(n)	   t(n)/1.1^n	  t(n)/fi^n   t(n)/1,1^n
+(*)         2       0.032000       0.026446       0.012223    0.008000000
+(*)         4       0.117000       0.079913       0.017070    0.007312500
+(*)         8       0.815000       0.380204       0.017348    0.003183594
+(*)        16       9.687000       2.108173       0.013469    0.000147812
+           32   16622.000000     787.258490       0.003413(&) 0.000003870
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:    (1.1^n)      Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:       O(fi^n)      Tiempo →  cte: 0.016
+Cota Sobrestimada:   (2^n)        Tiempo → 0 (decrece) cuando n → ∞
+
+[-]Tiempos de fib 2 :
+
+Tiempos fib 2: 
+	    n	        t(n)	   t(n)/n^0.8	  t(n)/n^1	 t(n)/n*log(n)
+        -------------------------------------------------------------------------
+(*)      1000       3.379000       0.013452       0.003379       0.000489
+(*)     10000      33.800000       0.021326       0.003380       0.000367
+(*)    100000     337.142000       0.033714       0.003371       0.000293
+      1000000    3367.000000       0.053363       0.003367       0.000244
+     10000000   33952.000000       0.085284       0.003395       0.000211
+	
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:    (n^0.8)         Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:       O(n)            Tiempo →  cte: 0.0337
+Cota Sobrestimada:   (n*log(n))      Tiempo → 0 (decrece) cuando n → ∞
+
+[-]Tiempos de fib 3 :
+
+	    n	        t(n)	t(n)/sqrt(log(n)) t(n)/log(n)  	t(n)/n^0.5
+	-------------------------------------------------------------------------
+(*)        1000          0.052       0.019785       0.007528      0.0016444
+(*)       10000          0.064       0.021088       0.006949      0.0006400
+(*)      100000          0.079       0.023283       0.006862      0.0002498
+(*)     1000000          0.093       0.025021       0.006732      0.0000930
+(*)    10000000          0.110       0.027399       0.006825      0.0000348
+
+
+
+*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:    (sqrt(log(n))) Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:       O(log(n))      Tiempo →  cte: 0.0074
+Cota Sobrestimada:   (n^0.5)        Tiempo → 0 (decrece) cuando n → ∞
+
+[+]Conclusiones:
+
+1. El algoritmo fib1 es significativamente más lento que los algoritos fib2 y fib3.fib 2 es a su vez más lento que fib 3.
+
+2. El algoritmo fib 2 crece de forma geométrica mientras que fib 3 sigue un crecimiento logaritmico
+
+3.Valor anómalo en fib1 para n = 32. Tarda mucho tiempo puesto que este algoritmo sigue un crecimiento del tiempo exponencial. 
+
+ 
