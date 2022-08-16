@@ -1,0 +1,134 @@
+Algoritmos
+Practica 2 
+Adriano Miranda Seoane -adriano.miranda
+Jorge Gónzalez Fernández -j.gonzalezf 
+Grupo: 1.2
+
+
+-----------
+INFORME
+-----------
+
+El siguiente estudio consiste en el análisis de la complejidad de dos algoritmos de ordenación en C: ordenación por inserción y ordenación por shell.calculamos sus tiempos de ejecución en tres situaciones distintas: vector inicial aleatorio, ordenado ascendentemente y ordenado descendentemente.De esta forma obtendremos conclusiones acerca de su eficiencia.
+
+[+]Características de la máquina:
+    [-]Procesador Intel Core i5-7200U CPU @ 2.50 GHz x 4
+    [-]Memoria RAM 8GB DDR4 
+    [-]Disco duro 1TB 5400rpm
+    [-]Tarjeta Gráfica Intel HD Graphics 620
+    [-]Sistema operativo: Ubuntu 18.04.3 LTS
+
+[+]Unidades de tiempo:
+    [-]La unidad de tiempo empleada es el Microsegundo
+    [-]Umbral de confianza: 500*10^-6 s [microsegundos]
+
+[+]Tiempos de ejecución:
+
+[+]Ordenación por inserción aleatoria
+       
+          n	             t(n)              t(n)/n^1.8	     t(n)/n^2        t(n)/n^2.2
+       500          181.776000       0.002520       0.000727      0.0002098  (*)
+      1000         721.000000       0.002870       0.000721      0.0001811     
+      2000       2890.000000       0.003304       0.000723      0.0001580     
+      4000     11378.000000       0.003736       0.000711      0.0001354     
+      8000     45727.000000       0.004311       0.000714      0.0001184     
+     16000  179302.000000       0.004855       0.000700      0.0001010     
+     32000  718669.000000       0.005588       0.000702      0.0000881    
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+Cota subestimada:      (n^1.8)    Tiempo → ∞ (diverge) cuando n → ∞  
+Cota Ajustada:              O(n^2)    Tiempo → cte: 0.00072
+Cota Sobrestimada:    (n^2.2)    Tiempo →  0 (decrece) cuando n → ∞ 
+
+[+]Ordenación por inserción ascendente
+       .
+         n	            t(n)            t(n)/n^0.8	     t(n)/n	       t(n)/n^1.2
+       500           1.909000       0.013232       0.003818      0.0011016  (*)
+      1000          3.620000       0.014411       0.003620      0.0009093  (*)
+      2000          7.881000       0.018020       0.003941      0.0008617  (*)
+      4000        16.045000       0.021071       0.004011      0.0007636  (*)
+      8000        30.480000       0.022990       0.003810      0.0006314  (*)
+     16000       61.757000       0.026754       0.003860      0.0005569  (*)
+     32000     123.038000       0.030614       0.003845      0.0004829  (*)
+
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos
+Cota subestimada:      (n^0.8)    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:                  O(n)    Tiempo → cte: 0.00385
+Cota Sobrestimada:    (n^1.2)    Tiempo →  0 (decrece) cuando n → ∞
+
+[+]Ordenación por inserción descendente
+        
+         n	                t(n)	t(n)/n^1.8        t(n)/n^2        t(n)/n^2.2
+       500            356.609000       0.004944       0.001426      0.0004116  (*)
+      1000         1415.000000       0.005633       0.001415      0.0003554     
+      2000         5571.000000       0.006369       0.001393      0.0003046     
+      4000       22869.000000       0.007508       0.001429      0.0002721     
+      8000       89849.000000       0.008471       0.001404      0.0002327     
+     16000   358542.000000       0.009708       0.001401      0.0002021     
+     32000 1429890.000000       0.011118       0.001396      0.0001754    
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:      (n^1.8)    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:              O(n^2)    Tiempo → cte:0.00143
+Cota Sobrestimada:    (n^2.2)    Tiempo → 0 (decrece) cuando n → ∞
+
+[-]Ordenación por shell aleatoria
+         n	            t(n)	t(n)/n	t(n)/n^1.18      t(n)/n^1.4
+       500          58.722000       0.117444       0.038372      0.0097778  (*)
+      1000       136.402000       0.136402       0.039339      0.0086064  (*)
+      2000       311.633000       0.155816       0.039667      0.0074508  (*)
+      4000       718.000000       0.179500       0.040336      0.0065049     
+      8000     1605.000000       0.200625       0.039795      0.0055100     
+     16000    3684.000000       0.230250       0.040314      0.0047924     
+     32000    8531.000000       0.266594       0.041202      0.0042052  
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:      (n^1.0)    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:        O(n^1.18)    Tiempo → cte: 0.041
+Cota Sobrestimada:    (n^1.4)    Tiempo → 0 (decrece) cuando n → ∞
+
+[-]Ordenación por shell ascendente 
+
+         n	            t(n)	t(n)/n	t(n)/n^1.12      t(n)/n^1.3
+       500          16.637000       0.033274       0.015784      0.0051572  (*)
+      1000         38.033000       0.038033       0.016602      0.0047881  (*)
+      2000         84.511000       0.042255       0.016973      0.0043209  (*)
+      4000       187.459000       0.046865       0.017322      0.0038925  (*)
+      8000       411.361000       0.051420       0.017489      0.0034690  (*)
+     16000      919.000000       0.057438       0.017976      0.0031475     
+     32000    1967.000000       0.061469       0.017703      0.0027360    
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:      (n^1.0)    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:        O(n^1.12)    Tiempo → cte: 0.017
+Cota Sobrestimada:    (n^1.3)    Tiempo → 0 (decrece) cuando n → ∞
+
+[-]Ordenación por shell descendente 
+
+         n	             t(n)                 t(n)/n        t(n)/n^1.12      t(n)/n^1.3
+       500          25.168000       0.050336       0.023878      0.0078017  (*)
+      1000         55.263000       0.055263       0.024123      0.0069572  (*)
+      2000       122.087000       0.061044       0.024520      0.0062421  (*)
+      4000       267.665000       0.066916       0.024733      0.0055579  (*)
+      8000       594.000000       0.074250       0.025254      0.0050092     
+     16000    1289.000000       0.080562       0.025214      0.0044147     
+     32000    2763.000000       0.086344       0.024866      0.0038431   
+
+(*) --> Tiempo promedio(μs) de 1000 iteraciones de los algoritmos.
+
+Cota subestimada:      (n^1.0)    Tiempo →  ∞ (diverge) cuando n → ∞ 
+Cota Ajustada:        O(n^1.12)    Tiempo → cte:0.025
+Cota Sobrestimada:    (n^1.3)    Tiempo → 0 (decrece) cuando n → ∞
+
+[+]Conclusiones:
+
+1. En general, el ordenamiento por inserción es ineficiente, porque mueve los valores sólo una posición cada vez. Aunque el ordenamiento por inserción es eficiente si la entrada está ordenada o casi ordenada, en cuyo caso la complejidad es lineal o prácticamente lineal. Para el algoritmo de inserción la complejidad obtenida empíricamente, se asemeja a la teórica, siendo cuadrática para el peor caso y lineal para el mejor. 
+
+2.El ordenamiento por shell es menos eficiente a la hora de ordenar entradas ordenadas o casi ordenadas en comparación al ordenamiento por inserción, ya que tiene iteracciones extra que en estos casos no serían necesarios, sin embargo, éstas hacen que sea más eficiente en casos desordenados.
+
+No hemos detectado valores anómalos.
+
