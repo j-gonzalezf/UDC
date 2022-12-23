@@ -6,7 +6,7 @@ mtype light0=red; // luz de los semáforos en dirección vertical
 mtype light1=red; // luz de los semáforos en dirección horizontal
 
 // Ponemos active[2] porque hay 2 carriles por cada dirección, por tanto 2 semáforos
-active[2] proctype P0() { // P0 = semáforos en dirección horizontal
+active[2] proctype P0() { // P0 = semáforos en dirección vertical
     do
         :: atomic { if
                 :: light0 == red ->
@@ -20,7 +20,7 @@ active[2] proctype P0() { // P0 = semáforos en dirección horizontal
     od
 }
 
-active[2] proctype P1() { // P1 = semáforos en dirección vertical
+active[2] proctype P1() { // P1 = semáforos en dirección horizontal
     do
         :: atomic { if
                 :: light1 == red -> 
