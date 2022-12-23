@@ -2,8 +2,8 @@
 // Grupo 1.1
 
 mtype={red,orange,green}
-mtype light0=red; // luz de los semáforos en dirección horizontal
-mtype light1=red; // luz de los semáforos en dirección vertical
+mtype light0=red; // luz de los semáforos en dirección vertical
+mtype light1=red; // luz de los semáforos en dirección horizontal
 
 // Ponemos active[2] porque hay 2 carriles por cada dirección, por tanto 2 semáforos
 active[2] proctype P0() { // P0 = semáforos en dirección horizontal
